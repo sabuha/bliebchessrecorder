@@ -1,11 +1,9 @@
 package fr.kalman.bliebchessrecorder.logic
 
-import fr.kalman.bliebchessrecorder.logic.Board.PieceOnSquare
-
-object Board {
-  type PieceOnSquare = (SquareCoord, Piece)
-}
-
+// TODO: implement apply to act as a map
+// TODO: implement adding/removing/moving piece (square coords as key)
+// TODO: Forbid duplicate keys (2 pieces on same square)
+// TODO: implement apply to act as a map
 abstract class Board {
   def head: PieceOnSquare
   def tail: Board
