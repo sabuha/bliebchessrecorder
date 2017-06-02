@@ -1,18 +1,17 @@
 package fr.kalman.bliebchessrecorder.logic
 
 import fr.kalman.bliebchessrecorder.logic.Color._
-import scala.collection.immutable.SortedSet
 
 sealed abstract class Piece {
-  private val authorizedId = SortedSet('p','r','n', 'b', 'q', 'k')
+  private val authorizedId = Vector('b', 'k', 'n', 'p', 'q', 'r')
   require(authorizedId contains id)
 
-  // Implement id as lazy or the requirement above will fail, because it is not set yet (=0)
+  // Implement id as lazy or the requirement above will fail, because id is not set yet (=0)
   val id: Char
   val color: Color
 
   override val toString: String = if (color == WHITE) id.toUpper.toString else id.toString
-  override val hashCode: Int = (1 + authorizedId.toVector.indexOf(id)) * (if (color==BLACK) 2 else 1)
+  override val hashCode: Int = (1 + authorizedId.indexOf(id)) * (if (color==BLACK) 2 else 1)
 }
 
 case class Pawn(color: Color) extends Piece { lazy val id='p' }

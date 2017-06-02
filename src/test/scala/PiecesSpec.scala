@@ -26,7 +26,6 @@ class PiecesSpec extends org.scalatest.FreeSpec {
           case _ => p1 != p2
         })
     }))
-    info(i.toString)
   }
 
   "Each piece is identified by a letter" - {
