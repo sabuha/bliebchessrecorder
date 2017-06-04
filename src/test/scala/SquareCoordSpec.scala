@@ -39,7 +39,7 @@ class SquareCoordSpec extends org.scalatest.FreeSpec {
     }
     "should produce IllegalArgumentException for invalid coordinates as Nf3" - {
       intercept[IllegalArgumentException] {
-        val sq:SquareCoord = ""
+        val sq:SquareCoord = "Nf3"
       }
     }
     "should produce IllegalArgumentException for coordinates with capital letter" - {
